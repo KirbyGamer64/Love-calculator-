@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        background-color: #ffcccc;
+    }
+    h1 {
+        text-align: center;
+        color: #ff4d4d;
+        font-size: 100px; 
+    }
+    form {
+        text-align: center;
+        font-size: 25px;
+    }
+    label {
+        color: #ff4d4d;
+        display: block;
+    }
+    input {
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid #ff4d4d;
+    }
+    button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        border: 1px solid #ff4d4d;
+        background-color: #ffcccc;
+        color: #ff4d4d;
+        font-size: 25px;
+    }
+    #result {
+        text-align: center;
+        font-size: 50px;
+        color: #ff4d4d;
+    }
+</style>
+<body>
+    <h1>Love Calculator</h1>
+    <form id="loveForm">
+        <label for="name1">Person 1:</label>
+        <input type="text" id="name1" name="name1" required>
+        
+        <label for="name2">Person 2:</label>
+        <input type="text" id="name2" name="name2" required>
+        
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div id="result"></div>
+    
+    <script>
+        var loveForm = document.getElementById("loveForm");
+        loveForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            var loveScore = Math.random() * 100;
+            loveScore = Math.floor(loveScore) + 1;
+            var resultElement = document.getElementById("result");
+            resultElement.textContent = "Your love score is " + loveScore + "%";
+        });
+    </script>
+</body>
+</html>
